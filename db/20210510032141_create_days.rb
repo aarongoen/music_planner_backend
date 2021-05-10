@@ -10,7 +10,7 @@ class CreateDays < ActiveRecord::Migration[6.1]
       t.string :gospel
       t.string :date
       t.string :date_pretty
-
+      t.string :year
       t.timestamps
     end
   end

@@ -10,25 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_183813) do
+ActiveRecord::Schema.define(version: 2021_05_10_192523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "days", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
-    t.string "lectionary"
-    t.string "first_reading"
-    t.string "psalm"
-    t.string "second_reading"
-    t.string "gospel"
-    t.string "date"
-    t.string "date_pretty"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "year"
-  end
 
   create_table "pieces", force: :cascade do |t|
     t.string "title"
@@ -36,6 +21,12 @@ ActiveRecord::Schema.define(version: 2021_05_10_183813) do
     t.string "voicing"
     t.string "publisher"
     t.string "collection"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pieces_days", force: :cascade do |t|
+    t.integer "piece_id"
     t.integer "day_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

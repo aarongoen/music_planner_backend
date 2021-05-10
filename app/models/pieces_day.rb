@@ -1,0 +1,2 @@
+class PiecesDay < ApplicationRecord
+end
