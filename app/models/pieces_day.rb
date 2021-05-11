@@ -1,4 +1,4 @@
 class PiecesDay < ApplicationRecord
-    belongs_to :pieces
-    belongs_to :days
+    belongs_to :piece
+    belongs_to :day
 end

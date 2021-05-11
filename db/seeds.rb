@@ -8,29 +8,48 @@
 
 Day.destroy_all
 Piece.destroy_all
+PiecesDay.destroy_all
 
 days = Day.create([
-    { name: "First Sunday of Advent", lectionary: "RCL", first_reading: "Zechariah (14:1-2); 14:3-9", psalm: "Psalm 50 or Psalm 50:1-6", second_reading: "1 Thessalonians 3:6-13", gospel: "Luke 21:25-33", date: "2021-11-28", date_pretty: "28. November 2021", year: "C"},
-    { name: "Second Sunday of Advent", lectionary: "RCL", first_reading: "Baruch 5:1-9 or Malachi 3:1-4", psalm: "Luke 1:68-79", second_reading: "Philippians 1:3-11", gospel: "Luke 3:1-6", date: "2021-12-05", date_pretty: "5. December 2021", year: "C"},
-    { name: "Third Sunday of Advent", lectionary: "RCL", first_reading: "Zephaniah 3:14-20", psalm: "Isaiah 12:2-6", second_reading: "Philippians 4:4-7", gospel: "Luke 3:7-18", date: "2021-12-12", date_pretty: "5. December 2021", year: "C"},
-    { name: "Fourth Sunday of Advent", lectionary: "RCL", first_reading: "Micah 5:2-5a", psalm: "Luke 1:46b-55 or Psalm 80:1-7", second_reading: "Hebrews 10:5-10", gospel: "Luke 1:39-45 [46-55]", date: "2021-12-19", date_pretty: "19. December 2021", year: "C"}
+    { name: "First Sunday of Advent", lectionary: "RCL", first_reading: "Zechariah (14:1-2); 14:3-9", psalm_or_canticle: "Psalm 50 or Psalm 50:1-6", second_reading: "1 Thessalonians 3:6-13", gospel: "Luke 21:25-33", date: "2021-11-28", date_pretty: "28. November 2021", year: "C"},
+    { name: "Second Sunday of Advent", lectionary: "RCL", first_reading: "Baruch 5:1-9 or Malachi 3:1-4", psalm_or_canticle: "Luke 1:68-79", second_reading: "Philippians 1:3-11", gospel: "Luke 3:1-6", date: "2021-12-05", date_pretty: "5. December 2021", year: "C"},
+    { name: "Third Sunday of Advent", lectionary: "RCL", first_reading: "Zephaniah 3:14-20", psalm_or_canticle: "Isaiah 12:2-6", second_reading: "Philippians 4:4-7", gospel: "Luke 3:7-18", date: "2021-12-12", date_pretty: "5. December 2021", year: "C"},
+    { name: "Fourth Sunday of Advent", lectionary: "RCL", first_reading: "Micah 5:2-5a", psalm_or_canticle: "Luke 1:46b-55 or Psalm 80:1-7", second_reading: "Hebrews 10:5-10", gospel: "Luke 1:39-45 [46-55]", date: "2021-12-19", date_pretty: "19. December 2021", year: "C"}
     ])
 
     pieces = Piece.create([
-        { title: "Come, I pray Thee", composer: "Anderson", voicing: "SATB", publisher: "Leslie", day_id: 1},
-        { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2", day_id: 1},
-        { title: "And there will be signs", composer: "Bender", voicing: "Unison", publisher: "CPH", day_id: 1},
+        { title: "Come, I pray Thee", composer: "Anderson", voicing: "SATB", publisher: "Leslie"},
+        { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2"},
+        { title: "And there will be signs", composer: "Bender", voicing: "Unison", publisher: "CPH"},
 
-        { title: "When the Lord turned again", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 2},
-        { title: "Comford, comfort ye my people", composer: "Bunjes", voicing: "SATB", publisher: "CPH", day_id: 2},
-        { title: "Arise, Sons of the Kingdom", composer: "Buxtehude", voicing: "Unison", publisher: "CPH", collection: "The First Morning Star Choir Book", day_id: 2},
+        { title: "When the Lord turned again", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book"},
+        { title: "Comford, comfort ye my people", composer: "Bunjes", voicing: "SATB", publisher: "CPH"},
+        { title: "Arise, Sons of the Kingdom", composer: "Buxtehude", voicing: "Unison", publisher: "CPH", collection: "The First Morning Star Choir Book"},
 
-        { title: "Rejoice in the Lord alway", composer: "anonymous", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 3},
-        { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2", day_id: 3},
-        { title: "Lord, we beseech Thee", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 3},
+        { title: "Rejoice in the Lord alway", composer: "anonymous", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book"},
+        { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2"},
+        { title: "Lord, we beseech Thee", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book"},
 
-        { title: "Lift up your heads", composer: "Amner", voicing: "SSATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 4},        
-        { title: "Ave Maria", composer: "Arcadelt", voicing: "SATB", publisher: "AE", day_id: 4},        
-        { title: "The Angel Gabriel", composer: "Arnatt", voicing: "SATB", publisher: "APH", day_id: 4}       
+        { title: "Lift up your heads", composer: "Amner", voicing: "SSATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book"},        
+        { title: "Ave Maria", composer: "Arcadelt", voicing: "SATB", publisher: "AE"},        
+        { title: "The Angel Gabriel", composer: "Arnatt", voicing: "SATB", publisher: "APH"}       
 
+    ])
+
+    pieces_day = PiecesDay.create([
+        { day_id: 1, piece_id: 1 },
+        { day_id: 1, piece_id: 2 },
+        { day_id: 1, piece_id: 3 },
+        
+        { day_id: 2, piece_id: 4 },
+        { day_id: 2, piece_id: 5 },
+        { day_id: 2, piece_id: 6 },
+
+        { day_id: 3, piece_id: 7 },
+        { day_id: 3, piece_id: 8 },
+        { day_id: 3, piece_id: 9 },
+
+        { day_id: 4, piece_id: 10 },
+        { day_id: 4, piece_id: 11 },
+        { day_id: 4, piece_id: 12 },
     ])
