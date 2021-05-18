@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_001412) do
+ActiveRecord::Schema.define(version: 2021_05_11_150543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,25 +30,15 @@ ActiveRecord::Schema.define(version: 2021_05_18_001412) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "days_pieces", force: :cascade do |t|
-    t.bigint "day_id"
-    t.bigint "piece_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["day_id"], name: "index_days_pieces_on_day_id"
-    t.index ["piece_id"], name: "index_days_pieces_on_piece_id"
-  end
-
   create_table "pieces", force: :cascade do |t|
     t.string "title"
     t.string "composer"
     t.string "voicing"
     t.string "publisher"
     t.string "collection"
+    t.integer "day_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "days_pieces", "days"
-  add_foreign_key "days_pieces", "pieces"
 end

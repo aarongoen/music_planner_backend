@@ -6,6 +6,7 @@ class CreatePieces < ActiveRecord::Migration[6.1]
       t.string :voicing
       t.string :publisher
       t.string :collection
+      t.integer :day_id
       t.timestamps
     end
   end

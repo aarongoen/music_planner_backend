@@ -8,7 +8,7 @@
 
 Day.destroy_all
 Piece.destroy_all
-DaysPiece.destroy_all
+# DaysPiece.destroy_all
 
 days = Day.create([
     { name: "First Sunday of Advent", lectionary: "RCL", first_reading: "Zechariah (14:1-2); 14:3-9", psalm_or_canticle: "Psalm 50 or Psalm 50:1-6", second_reading: "1 Thessalonians 3:6-13", gospel: "Luke 21:25-33", date: "2021-11-28", date_pretty: "28. November 2021", year: "C"},
@@ -18,41 +18,41 @@ days = Day.create([
     ])
 
 pieces = Piece.create([
-    { title: "Come, I pray Thee", composer: "Anderson", voicing: "SATB", publisher: "Leslie"},
-    { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2"},
-    { title: "And there will be signs", composer: "Bender", voicing: "Unison", publisher: "CPH"},
+    { title: "Come, I pray Thee", composer: "Anderson", voicing: "SATB", publisher: "Leslie", day_id: 1},
+    { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2", day_id: 1},
+    { title: "And there will be signs", composer: "Bender", voicing: "Unison", publisher: "CPH", day_id: 1},
 
-    { title: "When the Lord turned again", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book"},
-    { title: "Comford, comfort ye my people", composer: "Bunjes", voicing: "SATB", publisher: "CPH"},
-    { title: "Arise, Sons of the Kingdom", composer: "Buxtehude", voicing: "Unison", publisher: "CPH", collection: "The First Morning Star Choir Book"},
+    { title: "When the Lord turned again", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 2},
+    { title: "Comford, comfort ye my people", composer: "Bunjes", voicing: "SATB", publisher: "CPH", day_id: 2},
+    { title: "Arise, Sons of the Kingdom", composer: "Buxtehude", voicing: "Unison", publisher: "CPH", collection: "The First Morning Star Choir Book", day_id: 2},
 
-    { title: "Rejoice in the Lord alway", composer: "anonymous", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book"},
-    { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2"},
-    { title: "Lord, we beseech Thee", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book"},
+    { title: "Rejoice in the Lord alway", composer: "anonymous", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 3},
+    { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2", day_id: 3},
+    { title: "Lord, we beseech Thee", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 3},
 
-    { title: "Lift up your heads", composer: "Amner", voicing: "SSATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book"},        
-    { title: "Ave Maria", composer: "Arcadelt", voicing: "SATB", publisher: "AE"},        
-    { title: "The Angel Gabriel", composer: "Arnatt", voicing: "SATB", publisher: "APH"}       
+    { title: "Lift up your heads", composer: "Amner", voicing: "SSATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 4},       
+    { title: "Ave Maria", composer: "Arcadelt", voicing: "SATB", publisher: "AE", day_id: 4},        
+    { title: "The Angel Gabriel", composer: "Arnatt", voicing: "SATB", publisher: "APH", day_id: 4}       
 
 ])
 
-days_pieces = [
-    { day_id: 1, piece_id: 1 },
-    { day_id: 1, piece_id: 2 },
-    { day_id: 1, piece_id: 3 },
+# days_pieces = [
+#     { day_id: 1, piece_id: 1 },
+#     { day_id: 1, piece_id: 2 },
+#     { day_id: 1, piece_id: 3 },
     
-    { day_id: 2, piece_id: 4 },
-    { day_id: 2, piece_id: 5 },
-    { day_id: 2, piece_id: 6 },
+#     { day_id: 2, piece_id: 4 },
+#     { day_id: 2, piece_id: 5 },
+#     { day_id: 2, piece_id: 6 },
 
-    { day_id: 3, piece_id: 7 },
-    { day_id: 3, piece_id: 8 },
-    { day_id: 3, piece_id: 9 },
+#     { day_id: 3, piece_id: 7 },
+#     { day_id: 3, piece_id: 8 },
+#     { day_id: 3, piece_id: 9 },
 
-    { day_id: 4, piece_id: 10 },
-    { day_id: 4, piece_id: 11 },
-    { day_id: 4, piece_id: 12 },
-]
+#     { day_id: 4, piece_id: 10 },
+#     { day_id: 4, piece_id: 11 },
+#     { day_id: 4, piece_id: 12 },
+# ]
 
 # days_pieces = Day.each.all do |day|
 #     DaysPiece.create(day_id: day.id)
@@ -62,7 +62,7 @@ days_pieces = [
 #     DaysPiece.update(piece_id: piece.id)
 # end
 
-days_pieces.each do |hash|
-    DaysPiece.find_or_create_by(hash)
-end
+# days_pieces.each do |hash|
+#     DaysPiece.find_or_create_by(hash)
+# end
 
