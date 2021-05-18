@@ -1,4 +1,5 @@
 class Day < ApplicationRecord
-    has_and_belongs_to_many :pieces
+    has_many :days_pieces
+    has_many :pieces, through: :days_pieces, dependent: :destroy
 
 end

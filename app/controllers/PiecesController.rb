@@ -3,14 +3,16 @@ class PiecesController < ApplicationController
 
     def index
         pieces = Piece.all
-        render json: pieces.to_json( :include => [:days] )
+        render json: pieces.to_json
+        #  :include => [:days] )
     end
 
     def create
         # byebug
         piece = Piece.create(piece_params)
         if piece.save
-            render json: piece.to_json( :include => [:days] )
+            render json: piece.to_json
+            # ( :include => [:days] )
         else
             render json: { 
                 status: 500, 

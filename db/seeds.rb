@@ -8,7 +8,7 @@
 
 Day.destroy_all
 Piece.destroy_all
-PiecesDay.destroy_all
+DaysPiece.destroy_all
 
 days = Day.create([
     { name: "First Sunday of Advent", lectionary: "RCL", first_reading: "Zechariah (14:1-2); 14:3-9", psalm_or_canticle: "Psalm 50 or Psalm 50:1-6", second_reading: "1 Thessalonians 3:6-13", gospel: "Luke 21:25-33", date: "2021-11-28", date_pretty: "28. November 2021", year: "C"},
@@ -36,7 +36,7 @@ pieces = Piece.create([
 
 ])
 
-pieces_day = PiecesDay.create([
+days_pieces = [
     { day_id: 1, piece_id: 1 },
     { day_id: 1, piece_id: 2 },
     { day_id: 1, piece_id: 3 },
@@ -52,4 +52,17 @@ pieces_day = PiecesDay.create([
     { day_id: 4, piece_id: 10 },
     { day_id: 4, piece_id: 11 },
     { day_id: 4, piece_id: 12 },
-])
+]
+
+# days_pieces = Day.each.all do |day|
+#     DaysPiece.create(day_id: day.id)
+# end
+
+# days_pieces = Piece.each.all do |piece|
+#     DaysPiece.update(piece_id: piece.id)
+# end
+
+days_pieces.each do |hash|
+    DaysPiece.find_or_create_by(hash)
+end
+

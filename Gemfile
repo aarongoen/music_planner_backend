@@ -50,3 +50,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails_refactor'
 gem 'rack-cors'
+gem 'active_model_serializers'

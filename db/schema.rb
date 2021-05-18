@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_192313) do
+ActiveRecord::Schema.define(version: 2021_05_18_001412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2021_05_17_192313) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "days_pieces", force: :cascade do |t|
+    t.bigint "day_id"
+    t.bigint "piece_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["day_id"], name: "index_days_pieces_on_day_id"
+    t.index ["piece_id"], name: "index_days_pieces_on_piece_id"
+  end
+
   create_table "pieces", force: :cascade do |t|
     t.string "title"
     t.string "composer"
@@ -40,15 +49,6 @@ ActiveRecord::Schema.define(version: 2021_05_17_192313) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "pieces_days", force: :cascade do |t|
-    t.bigint "day_id", null: false
-    t.bigint "piece_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["day_id"], name: "index_pieces_days_on_day_id"
-    t.index ["piece_id"], name: "index_pieces_days_on_piece_id"
-  end
-
-  add_foreign_key "pieces_days", "days"
-  add_foreign_key "pieces_days", "pieces"
+  add_foreign_key "days_pieces", "days"
+  add_foreign_key "days_pieces", "pieces"
 end
