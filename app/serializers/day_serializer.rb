@@ -1,6 +1,16 @@
-class DaySerializer < ActiveModel::DaySerializer
-    attributes :id, :name 
-    # :type, :lectionary, :first_reading, :psalm_or_canticle, :second_reading, :gospel, :date, :date_pretty, :year 
-    has_many :pieces
+class DaySerializer < ActiveModel::Serializer
+    attributes :id, :date, :name, :year, :first_reading, 
+    :psalm_or_canticle, 
+    :second_reading, 
+    :gospel, :pieces
 
-end
+    def pieces 
+      self.object.pieces.map do |piece|
+        {piece_id: piece.id,
+         title: piece.title, 
+         composer: piece.composer,
+         voicing: piece.voicing,
+        collection: piece.collection}
+      end 
+    end 
+  end

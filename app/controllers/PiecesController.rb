@@ -3,8 +3,7 @@ class PiecesController < ApplicationController
 
     def index
         pieces = Piece.all
-        render json: pieces.to_json
-        #  :include => [:days] )
+        render json: pieces, include: [:day]
     end
 
     def create

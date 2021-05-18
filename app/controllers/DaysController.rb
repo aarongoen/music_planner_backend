@@ -1,8 +1,7 @@
 class DaysController < ApplicationController
     def index
         days = Day.all
-        render json: days.to_json
-        # ( :include => [:pieces])
+        render json: days, include: ['days.pieces']
     end
 
     def show
