@@ -1,5 +1,5 @@
 class PieceSerializer < ActiveModel::Serializer
-    attributes :id, :title, :composer, :voicing, :collection, :day
+    attributes :id, :title, :composer, :voicing, :collection
     
     def day
         {day_id: self.object.day.id,

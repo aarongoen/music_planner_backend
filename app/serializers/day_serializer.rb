@@ -1,5 +1,5 @@
 class DaySerializer < ActiveModel::Serializer
-    attributes :id, :date, :name, :year, :first_reading, 
+    attributes :id, :date, :date_pretty, :name, :year, :first_reading, 
     :psalm_or_canticle, 
     :second_reading, 
     :gospel, :pieces

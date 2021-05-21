@@ -22,6 +22,6 @@ class PiecesController < ApplicationController
 
     private
     def piece_params
-        params.require(:piece).permit(:title, :composer, :voicing, :publisher, :collection)
+        params.require(:piece).permit(:title, :composer, :voicing, :publisher, :collection, :day_id)
     end
 end
