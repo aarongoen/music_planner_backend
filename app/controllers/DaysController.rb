@@ -6,7 +6,6 @@ class DaysController < ApplicationController
 
     def show
         day = Day.find_by_id(params[:id])
-        render json: day.to_json
-        # ( :include => [:pieces])
+        render json: day, include: ['day.pieces']
     end
 end

@@ -3,6 +3,7 @@ class DaySerializer < ActiveModel::Serializer
     :psalm_or_canticle, 
     :second_reading, 
     :gospel, :pieces
+    has_many :pieces
 
     def pieces 
       self.object.pieces.map do |piece|
