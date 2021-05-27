@@ -1,23 +1,19 @@
 class PiecesController < ApplicationController
     skip_before_action :verify_authenticity_token
-    before_action :get_day
-    before_action :set_piece
+    before_action :get_day, only: [:index, :create]
+    # before_action :set_piece, only: [:show]
 
     def index
         @pieces = @day.pieces 
-        render json: @pieces, include: [:day]
-    end
-
-    def new
-        @piece = @day.pieces.build
-        render json: piece
+        render json: @pieces
+        # , include: [:day]
     end
 
     def create
+        
+        # @piece = @day.pieces.build(piece_params)
+        piece = Piece.create(piece_params)
         # byebug
-        @piece = @day.pieces.build
-
-        @piece = Piece.create(piece_params)
         if piece.save
             render json: piece.to_json
             # ( :include => [:days] )
@@ -30,7 +26,8 @@ class PiecesController < ApplicationController
     end
 
     def show
-        # @piece = Piece.find_by_id(params[:id])
+        @piece 
+        # = Piece.find_by_id(params[:id])
         render json: @piece
         # include: ['piece.day']
     end
