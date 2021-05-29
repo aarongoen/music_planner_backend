@@ -11,6 +11,7 @@ class DaySerializer < ActiveModel::Serializer
          title: piece.title, 
          composer: piece.composer,
          voicing: piece.voicing,
+         publisher: piece.publisher,
         collection: piece.collection}
       end 
     end 
