@@ -4,18 +4,20 @@ class PiecesController < ApplicationController
     # before_action :set_piece, only: [:show]
 
     def index
+        # @day = Day.find(params[:day_id])
         @pieces = @day.pieces 
         render json: @pieces
         # , include: [:day]
     end
 
     def create
-        
-        # @piece = @day.pieces.build(piece_params)
-        piece = Piece.create(piece_params)
         # byebug
-        if piece.save
-            render json: piece.to_json
+        @piece = @day.pieces.create(piece_params)
+        # byebug
+        # piece = Piece.create(piece_params)
+        # byebug
+        if @piece.save
+            render json: @piece
             # ( :include => [:days] )
         else
             render json: { 
@@ -38,6 +40,7 @@ class PiecesController < ApplicationController
     end
 
     def get_day
+        # byebug
         @day = Day.find(params[:day_id])
     end
 

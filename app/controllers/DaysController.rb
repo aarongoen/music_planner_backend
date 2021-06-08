@@ -1,5 +1,6 @@
 class DaysController < ApplicationController
     def index
+        # byebug
         days = Day.all
         render json: days, include: ['days.pieces']
     end
