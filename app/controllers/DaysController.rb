@@ -2,11 +2,12 @@ class DaysController < ApplicationController
     def index
         # byebug
         days = Day.all
-        render json: days, include: ['days.pieces']
+        render json: days
     end
 
     def show
+        # byebug
         day = Day.find_by_id(params[:id])
-        render json: day, include: ['day.pieces']
+        render json: day
     end
 end

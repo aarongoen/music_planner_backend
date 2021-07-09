@@ -18,21 +18,21 @@ days = Day.create([
     ])
 
 pieces = Piece.create([
-    { title: "Come, I pray Thee", composer: "Anderson", voicing: "SATB", publisher: "Leslie", day_id: 1},
-    { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2", day_id: 1},
-    { title: "And there will be signs", composer: "Bender", voicing: "Unison", publisher: "CPH", day_id: 1},
+    { title: "Come, I pray Thee", composer: "Anderson", voicing: "SATB", publisher: "Leslie", day_id: Day.first.id},
+    { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2", day_id: Day.first.id},
+    { title: "And there will be signs", composer: "Bender", voicing: "Unison", publisher: "CPH", day_id: Day.first.id},
 
-    { title: "When the Lord turned again", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 2},
-    { title: "Comford, comfort ye my people", composer: "Bunjes", voicing: "SATB", publisher: "CPH", day_id: 2},
-    { title: "Arise, Sons of the Kingdom", composer: "Buxtehude", voicing: "Unison", publisher: "CPH", collection: "The First Morning Star Choir Book", day_id: 2},
+    { title: "When the Lord turned again", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: Day.second.id},
+    { title: "Comford, comfort ye my people", composer: "Bunjes", voicing: "SATB", publisher: "CPH", day_id: Day.second.id},
+    { title: "Arise, Sons of the Kingdom", composer: "Buxtehude", voicing: "Unison", publisher: "CPH", collection: "The First Morning Star Choir Book", day_id: Day.second.id},
 
-    { title: "Rejoice in the Lord alway", composer: "anonymous", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 3},
-    { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2", day_id: 3},
-    { title: "Lord, we beseech Thee", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 3},
+    { title: "Rejoice in the Lord alway", composer: "anonymous", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: Day.third.id},
+    { title: "Zion hears the watchmen's voices", composer: "Bach/Rutter", voicing: "Unison", publisher: "Oxford University Press", collection: "Carols for Choirs 2", day_id: Day.third.id},
+    { title: "Lord, we beseech Thee", composer: "Batten", voicing: "SATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: Day.third.id},
 
-    { title: "Lift up your heads", composer: "Amner", voicing: "SSATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: 4},       
-    { title: "Ave Maria", composer: "Arcadelt", voicing: "SATB", publisher: "AE", day_id: 4},        
-    { title: "The Angel Gabriel", composer: "Arnatt", voicing: "SATB", publisher: "APH", day_id: 4}       
+    { title: "Lift up your heads", composer: "Amner", voicing: "SSATB", publisher: "Oxford University Press", collection: "16th Century Anthem Book", day_id: Day.fourth.id},       
+    { title: "Ave Maria", composer: "Arcadelt", voicing: "SATB", publisher: "AE", day_id: Day.fourth.id},        
+    { title: "The Angel Gabriel", composer: "Arnatt", voicing: "SATB", publisher: "APH", day_id: Day.fourth.id}       
 
 ])
 
